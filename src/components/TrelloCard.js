@@ -17,21 +17,23 @@ const useStyles = makeStyles({
   },
 });
 
-const TrelloCard = () => {
+const TrelloCard = ({ text }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.root}>
+    <Card style={styles.cardContainer}>
       <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
+        <Typography className={classes.title} color="textSecondary">
+          {text}
         </Typography>
       </CardContent>
     </Card>
   );
+};
+
+const styles = {
+  cardContainer: {
+    marginBottom: 8,
+  },
 };
 
 export default TrelloCard;
